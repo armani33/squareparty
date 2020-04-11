@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_action :authorized, only: [:main]
 
   def main
     @products = Product.all.sort

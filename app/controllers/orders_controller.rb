@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  skip_before_action :authorized, only: [:edit, :create, :update]
   def edit
     @product = Product.find(params[:product_id])
     @order = Order.find(params[:id])
@@ -45,7 +45,6 @@ class OrdersController < ApplicationController
     @product = Product.find(params[:product_id])
     @order = Order.find(params[:id])
     @order.update(order_params)
-
     @order.status = 'paid'
 
 
@@ -62,6 +61,7 @@ class OrdersController < ApplicationController
         :card => @order.stripe_token # obtained with Stripe.js
       )
 
+      session[:user_id] = @order.id
       redirect_to dashboard_path(:h => @product, :i => @order)
     else
       flash[:error] = "Oops, something went wrong"
@@ -79,7 +79,7 @@ class OrdersController < ApplicationController
   private
 
     def order_info_params
-      params.require(:order).permit(:product_id, :email, :password_digest, :first_name, :last_name, :address, :zip_code, :city, :country, :discount_code)
+      params.require(:order).permit(:product_id, :email, :password, :first_name, :last_name, :address, :zip_code, :city, :country, :discount_code)
     end
 
     def order_params
