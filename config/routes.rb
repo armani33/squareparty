@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+  root to: 'pages#main'
+
+
+  resources :products do
+    get '/orders/:id/payment', to: 'orders#edit', as: 'payment_order'
+    resources :orders
+  end
 end

@@ -1,0 +1,57 @@
+.nav-container{
+  position: fixed;
+  top: 15;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  .left-container{
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    img{
+      width: 65px;
+    }
+    p{
+      margin-top: -2px;
+      font-family: 'Cunia';
+    }
+  }
+  .login-container{
+    margin-right: 60px;
+    margin-top: 10px;
+    a{
+    text-decoration: none;
+    color: white;
+    font-family: Cunia;
+    &:hover{
+
+    }
+      .login-button{
+        width: 125px;
+        height: 35px;
+        text-align: center;
+        line-height: 33px;
+        background-color: black;
+        // border: 2px solid black;
+        border-radius: 5px;
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+.invitation-container{
+  position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  text-align: center;
+  p{
+    background-color: #00D8E9;
+  }
+}

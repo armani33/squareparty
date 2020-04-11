@@ -1,0 +1,16 @@
+<div class="nav-container">
+  <div class="left-container">
+    <%= image_tag('Logo-thug@2x.png', class: "bruzz") %>
+    <p>Square</p>
+  </div>
+  <div class="login-container">
+    <%= link_to root_path do%><div class="login-button">Login</div><% end %>
+  </div>
+</div>
+<% if @user_referrer %>
+  <div class="invitation-container">
+    <div class="inv_content">
+      <p><%= @user_referrer.first_name %> invited you to the party</p>
+    </div>
+  </div>
+<% end %>

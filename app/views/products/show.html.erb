@@ -1,0 +1,82 @@
+<% render "shared/navbar" %>
+<%= link_to 'Back', root_path %>
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price_in_cent / 100 %>€
+</p>
+
+<% flash.each do |key, value| %>
+  <div class="<%= key %>" style="color:orange;">
+    <p><%= value %></p>
+  </div>
+<% end %>
+
+<%= form_for [@product, @order], validate: true, method: :post do |f| %>
+<%= hidden_field_tag 'ref', params[:ref] %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :email %>
+      <%= f.email_field :email, validate: true, class: "form-control", placeholder: "Email" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :password %>
+      <%= f.password_field :password_digest, class: "form-control", placeholder: "Password" ,help: "Must be at least 4 characters long" %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: "form-control", placeholder: "First Name", error: 'First name is mandatory, please specify one'%>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control", placeholder: "Avenue Winston Churchill 432"%>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: "form-control", placeholder: "City"%>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :country %>
+      <%= f.select :country, options_for_select([["France"], ["Netherlands"], ["Belgium"], ["United Kingdom"], ["Germany"]].sort, selected: ["Belgium"]), {}, {class: "form-control"} %>
+    </div>
+
+    <div class="form-group col-md-2">
+      <%= f.label :zip_code %>
+      <%= f.text_field :zip_code, class: "form-control", placeholder: "1050"%>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= f.label :discount_code %>
+      <%= f.text_field :discount_code, class: "form-control", placeholder: "Enter discount code if you receive one" %>
+    </div>
+    <div class="form-group col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Accept Terms of Buying
+        </label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Order Your Box</button>
+<% end %>
+
+
+
+
+
+
+

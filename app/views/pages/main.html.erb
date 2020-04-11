@@ -1,0 +1,35 @@
+<%= render "shared/navbar" %>
+<div class="main-container">
+  <%= image_tag('guirlande_bleu@2x.png', class: "guirlande") %>
+
+  <div class="page-1-container">
+    <div class="page-1-wrapper">
+      <%= image_tag('provisoir-Webapp.png', class: "macbook") %>
+      <div class="right-wrapper">
+        <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
+        <h2>Party with your friends and<br>challenge other rooms.</h2>
+        <%= link_to "Get Your place", root_path %>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-2-web-app-infos">
+
+  </div>
+
+  <div class="box-container">
+    <div class="box-wrapper">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product, :ref => @referrer_code ) do %>
+          <div class="box">
+            <p><%= product.name %></p>
+            <p><%= product.price_in_cent %></p>
+            <td><%= link_to 'Edit', edit_product_path(product) %></td>
+            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+        <% end %>
+      <% end %>
+      <%= link_to 'New Product', new_product_path %>
+    </div>
+  </div>
+</div>
