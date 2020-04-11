@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
 
     else
       # flash[:error] = "Please ensure all fields have been filled out."
-      render :template => 'products/show/' , :locals => { :ref => @referrer_code }
+      render :template => 'products/show/'
     end
   end
 
