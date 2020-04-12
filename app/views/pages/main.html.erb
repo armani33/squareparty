@@ -23,13 +23,13 @@
         <%= link_to product_path(product, :ref => @referrer_code ) do %>
           <div class="box">
             <p><%= product.name %></p>
+            <% if product.image_filename_1 %>
+              <% image_tag product.image_filename_1 %>
+            <% end %>
             <p><%= product.price_in_cent %></p>
-            <td><%= link_to 'Edit', edit_product_path(product) %></td>
-            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </div>
         <% end %>
       <% end %>
-      <%= link_to 'New Product', new_product_path %>
     </div>
   </div>
 </div>

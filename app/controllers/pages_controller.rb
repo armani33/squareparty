@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def main
     redirect_to dashboard_path(:h => current_user.product_id, :i => current_user.id) if logged_in?
-
     @products = Product.all.sort
     @referrer_code = params[:ref]
     @user_referrer = Order.find_by_referral_code(@referrer_code) if params[:ref]
@@ -21,9 +20,6 @@ class PagesController < ApplicationController
       # redirect_to dashboard_path(:h => @product, :i => @order)
       # render :template => 'pages/dashboard'
     end
-
   end
-
-
 
 end
