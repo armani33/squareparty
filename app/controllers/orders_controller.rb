@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
             @order.status = 'free'
             @order.save
             Discount.find_by_discount_code(@order.discount_code).destroy
+            session[:user_id] = @order.id
             redirect_to dashboard_path(:h => @product, :i => @order)
           else
             redirect_to product_payment_order_path([@product.id, @order.id], :r => @referrer_code)
@@ -32,12 +33,14 @@ class OrdersController < ApplicationController
         end
       else
         # flash[:error] = "Something went wrong! Could not save."
-        render :template => 'products/show'
+      render :template => 'products/show'
       end
 
     else
-      # flash[:error] = "Please ensure all fields have been filled out."
-      render :template => 'products/show/'
+
+    render :template => 'products/show'
+
+
     end
   end
 

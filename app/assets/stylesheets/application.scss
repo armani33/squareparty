@@ -15,6 +15,7 @@
  */
 
 @import "components/navbar";
+@import "components/errors";
 
 @import "config/colors";
 @import "config/fonts";
@@ -24,9 +25,7 @@
   margin: 0 50px;
 }
 
-// .field_with_errors .message{
-//   font-family: $roboto;
-//   color: #D00;
-//   font-size: 13px;
-//   padding-left: 5px;
-// }
+.form-control{
+  color: black !important;
+}
+
