@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_142710) do
+ActiveRecord::Schema.define(version: 2020_04_12_185759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_142710) do
     t.string "discount_code"
     t.string "stripe_token"
     t.integer "product_id"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
     t.index ["email"], name: "index_orders_on_email", unique: true
   end
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :password_resets
 
   resources :products do
     get '/orders/:id/payment', to: 'orders#edit', as: 'payment_order'
