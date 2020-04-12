@@ -17,5 +17,4 @@ ActiveAdmin.register Product do
 
   permit_params :list, :of, :attributes, :on, :model, :name, :price, :image_filename_1, :image_filename_2, :image_filename_3, :string, :description
 
-
 end
