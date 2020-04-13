@@ -1,47 +1,52 @@
 .main-container{
-  img{
-    position: absolute;
+  img#guirlande{
+    position: fixed;
+    top:0;
     right: 0;
-    top: 0;
-    width: 240px;
+    width: 250px;
+    height: 155px;
   }
   .page-1-container{
     height: 100vh;
-    display: flex;
-    align-items: flex-end;
     .page-1-wrapper{
-      height: 80%;
       width: 100%;
+      height: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       img.macbook{
-        width: 90%;
+        width: 100%;
         position: absolute;
         left: 0;
-        margin-top: 100px;
-        z-index: -1;
+        bottom: 0;
       }
       .right-wrapper{
+        flex-basis: 33%;
+        display: flex;
+        flex-direction: column;
         h1{
           font-family: "Cunia";
           font-size: 38px;
-          margin-top: -80px;
-          margin-right: 30px;
         }
         h2{
-          font-family: "roboto";
+          font-family: "Futura";
           font-weight: 500;
           font-size: 23px;
-          margin-bottom: 45px;
+          margin: 30px 0 45px;
         }
-        a{
-          border: 2px solid #00ECF8;
-          padding: 8px 30px;
-          border-radius: 5px;
+        a.call_to_action{
+          border: 1px solid black;
+          box-shadow: 3px 2px 2px rgba(0,0,0,0.25);
+          padding: 7px 0;
+          border-radius: 1px;
           text-decoration: none;
+          text-align: center;
+          width: 180px;
           color: black;
-          font-family: "roboto";
+          font-family: "Futura";
+          &:hover{
+            font-size: 15px;
+          }
         }
       }
     }

@@ -1,14 +1,16 @@
 <%= render "shared/navbar" %>
 <div class="main-container">
-  <%= image_tag('guirlande_bleu@2x.png', class: "guirlande") %>
+  <%= image_tag('guirlande_bleu@2x.png', id: "guirlande") %>
 
   <div class="page-1-container">
     <div class="page-1-wrapper">
-      <%= image_tag('WebApp.png', class: "macbook") %>
+      <div class="imaage">
+        <%= image_tag('WebApp.png', class: "macbook") %>
+      </div>
       <div class="right-wrapper">
         <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
         <h2>Party with your friends and<br>challenge other rooms.</h2>
-        <%= link_to "Get Your place", root_path %>
+        <%= link_to "Get early access", root_path, class: "call_to_action" %>
       </div>
     </div>
   </div>

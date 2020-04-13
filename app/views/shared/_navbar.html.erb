@@ -10,7 +10,7 @@
 <% if @user_referrer %>
   <div class="invitation-container">
     <div class="inv_content">
-      <p><%= @user_referrer.first_name %> invited you to the party</p>
+      <p><span><%= @user_referrer.first_name %> <%= @user_referrer.last_name %></span> invited you to the party 🎉</p>
     </div>
   </div>
 <% end %>
