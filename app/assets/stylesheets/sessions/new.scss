@@ -1,0 +1,32 @@
+.login-page-container{
+  margin: 40px 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .login-page-content{
+    width: 60%;
+    display: flex;
+    .left{
+      margin-right: 50px;
+      img{
+        width: 200px;
+        margin-left: -30px;
+      }
+      h1{
+        font-family: 'cunia';
+        font-size: 45px;
+      }
+    }
+    .right{
+      margin-top: 20px;
+      width: 100%;
+      p{
+        a{
+          &:hover{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

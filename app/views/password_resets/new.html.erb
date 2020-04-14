@@ -1,11 +1,17 @@
-<h1>Reset Password</h1>
-
-<%= form_tag password_resets_path, :method => :post do %>
-  <div class='field'>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-    <div class='actions'>
-    <%= submit_tag "Reset Password" %>
+<% flash.each do |key, value| %>
+  <div class="<%= key %>" style="color:orange; margin: 10px 0 0 10px;">
+    <p><%= value %></p>
   </div>
 <% end %>
+<div class="reset-password-page">
+  <h1>Reset Password</h1>
+  <%= form_tag password_resets_path, :method => :post do %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+      <%= label_tag :email %>
+      <%= text_field_tag :email,"", class: "form-control", placeholder: "Email" %>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;Reset Password&nbsp;&nbsp;&nbsp;</button>
+  <% end %>
+</div>

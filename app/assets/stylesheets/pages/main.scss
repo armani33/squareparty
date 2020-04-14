@@ -20,6 +20,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
+        z-index: -1;
       }
       .right-wrapper{
         flex-basis: 37%;
@@ -302,6 +303,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        a{
+          &:hover{
+            background-color: transparent;
+            text-decoration: none;
+            .box{
+              border-color: #0DB3FF;
+            }
+          }
+        }
         .box{
           display: flex;
           flex-direction: column;

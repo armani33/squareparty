@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = Order.find_by_email(params[:email]) if Order.find_by_email(params[:email]).status == 'paid'
-    product = Product.find(user.product_id)
+    user = Order.find_by_email(params[:email]) if Order.find_by_email(params[:email]).status == 'paid' unless Order.find_by_email(params[:email]).nil?
+    product = Product.find(user.product_id) unless user.nil?
 
     if user && user.authenticate(params[:password_digest])
       session[:user_id] = user.id

@@ -7,6 +7,13 @@
     <%= link_to login_path do%><div class="login-button">Login</div><% end %>
   </div>
 </div>
+<div class="flash-alert">
+  <% flash.each do |key, value| %>
+    <div class="<%= key %>" style="color:orange;">
+      <p><%= value %></p>
+    </div>
+  <% end %>
+</div>
 <% if @user_referrer %>
   <div class="invitation-container">
     <div class="inv_content">
