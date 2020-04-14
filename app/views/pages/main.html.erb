@@ -8,9 +8,11 @@
         <%= image_tag('WebApp.png', class: "macbook") %>
       </div>
       <div class="right-wrapper">
-        <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
-        <h2>Party with your friends and<br>challenge other rooms.</h2>
-        <%= link_to "Get early access", root_path, class: "call_to_action" %>
+        <div class="right-content">
+          <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
+          <h2>Party with your friends and challenge<br>other rooms.</h2>
+          <%= link_to "Get early access", root_path, class: "call_to_action" %>
+        </div>
       </div>
     </div>
   </div>
@@ -40,19 +42,86 @@
     </div>
   </div>
 
-  <div class="box-container">
-    <div class="box-wrapper">
-      <% @products.each do |product| %>
-        <%= link_to product_path(product, :ref => @referrer_code ) do %>
-          <div class="box">
-            <p><%= product.name %></p>
-            <% if product.image_filename_1 %>
-              <% image_tag product.image_filename_1 %>
-            <% end %>
-            <p><%= product.price_in_cent %></p>
+  <div class="rooms-container">
+    <div class="rooms-content">
+      <div class="room-top-wrapper">
+        <div class="room-top-content">
+          <div class="left-content">
+            <div class="rectangle"></div>
           </div>
+          <div class="right-content">
+            <div class="text-content">
+              <h3>Create a room<br>with 3 <span>friends</span></h3>
+              <p>Meet random groups of friends in team.</p>
+              <%= link_to "Get early access", root_path, class: "call_to_action" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="room-bottom-wrapper">
+        <div class="room-bottom-content">
+          <div class="left-content">
+            <div class="text-content">
+              <h3>Next others<br><span>random</span> rooms</h3>
+              <p>Play alcohol games and <%= link_to 'Truth or Dare', root_path%><br>against them.</p>
+              <%= link_to "Get early access", root_path, class: "call_to_action" %>
+            </div>
+          </div>
+          <div class="right-content">
+            <div class="rectangle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="truth-or-dare-container">
+    <div class="truth-or-dare-content"></div>
+  </div>
+
+  <div class="box-container">
+    <div class="box-content">
+      <h3>Choose your box for the party 🎉</h3>
+      <p>We will deliver them at your doorstep before the party start.</p>
+      <div class="box-wrapper">
+        <% @products.each do |product| %>
+          <%= link_to product_path(product, :ref => @referrer_code ) do %>
+            <div class="box">
+              <div class="box-top">
+                <% if product.image_filename_1 %>
+                  <% image_tag product.image_filename_1 %>
+                <% end %>
+              </div>
+              <div class="box-bottom">
+                <p><%= product.price_in_cent / 100%>€</p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
