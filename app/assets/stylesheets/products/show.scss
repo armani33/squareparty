@@ -1,0 +1,33 @@
+.product-show-container{
+  height: 100vh;
+  padding: 40px;
+  background-color: #F5F5F5;
+  p#copyright{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -45px;
+    color: #6E757C;
+  }
+  .product-show-content{
+    height: 100%;
+    display: flex;
+    .left-wrapper{
+      flex-basis: 50%;
+    }
+    .right-wrapper{
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .image{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        img.credit-card{
+        width: 100px;
+        }
+      }
+    }
+  }
+}

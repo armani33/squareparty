@@ -1,32 +1,17 @@
 .login-page-container{
-  margin: 40px 50px;
+  background-color: #F5F5F5;
+  height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  .login-page-content{
-    width: 60%;
-    display: flex;
-    .left{
-      margin-right: 50px;
-      img{
-        width: 200px;
-        margin-left: -30px;
-      }
-      h1{
-        font-family: 'cunia';
-        font-size: 45px;
-      }
-    }
-    .right{
-      margin-top: 20px;
-      width: 100%;
-      p{
-        a{
-          &:hover{
-            background-color: transparent;
-          }
-        }
-      }
+  h1{
+    font-family: 'Cunia';
+    font-size: 40px;
+  }
+  p.forgot-password{
+    a:hover{
+      background-color: transparent;
+      text-decoration: underline;
     }
   }
 }

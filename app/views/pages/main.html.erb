@@ -87,9 +87,14 @@
           <%= link_to product_path(product, :ref => @referrer_code ) do %>
             <div class="box">
               <div class="box-top">
-                <% if product.image_filename_1 %>
-                  <% image_tag product.image_filename_1 %>
-                <% end %>
+                <div class="image"><%= image_tag product.image_filename_1 %></div>
+                <div class="text-content">
+                  <ul>
+                    <li><%= image_tag 'check-ok.png' %>Free entrance ticket.</li>
+                    <li><%= image_tag 'check-ok.png' %><%= product.donation_amount %>€ donation to Covid-19.</li>
+                    <li><%= image_tag 'check-ok.png' %><%= product.name %>.</li>
+                  </ul>
+                </div>
               </div>
               <div class="box-bottom">
                 <p><%= product.price_in_cent / 100%>€</p>

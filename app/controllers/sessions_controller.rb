@@ -1,13 +1,15 @@
 class SessionsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
+
   def new
   end
 
   def create
-    user = Order.find_by_email(params[:email]) if Order.find_by_email(params[:email]).status == 'paid' unless Order.find_by_email(params[:email]).nil?
+    user = Order.find_by_email(params[:email]) if Order.find_by_email(params[:email]) #.status == 'paid' unless Order.find_by_email(params[:email]).nil?
     product = Product.find(user.product_id) unless user.nil?
 
-    if user && user.authenticate(params[:password_digest])
+
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to dashboard_path(:h => product.id, :i => session[:user_id]), notice: "Logged in!"
     else

@@ -10,22 +10,30 @@
   padding-top: 15px;
   .left-container{
     flex-basis: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    img{
-      width: 50px;
-      margin-top: -10px;
-    }
-    p{
-      margin-top: -2px;
-      font-family: 'Cunia';
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: black;
+      text-decoration: none;
+      &:hover{
+        background-color: transparent;
+      }
+      img{
+        width: 60px;
+        margin-top: -10px;
+      }
+      p{
+        margin-bottom: 10px;
+        margin-left: 5px;
+        font-family: 'Cunia';
+        font-size: 15px;
+      }
     }
   }
   .login-container{
     margin-right: 90px;
-    margin-top: -35px;
+    margin-top: -20px;
     a{
     text-decoration: none;
     color: black;
