@@ -1,21 +1,18 @@
 <%= render "shared/navbar" %>
 <div class="main-container">
-  <%= image_tag('guirlande_bleu@2x.png', id: "guirlande") %>
+  <%= image_tag('guirlande_bleu@2xx.png', id: "guirlande") %>
+
   <div class="page-1-container">
     <div class="page-1-wrapper">
-      <div class="imaage">
-        <%= image_tag('WebApp.png', class: "macbook") %>
-      </div>
       <div class="right-wrapper">
         <div class="right-content">
           <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
-          <h2>Party with your friends and challenge<br>other rooms.</h2>
-          <%= link_to "Get early access", root_path, class: "call_to_action" %>
+          <h2>Party with your friends and play against others random rooms.</h2>
+          <%= link_to 'Get access', root_path, class: "btn btn-lg btn-dark btn-block active"%>
         </div>
       </div>
     </div>
   </div>
-
   <div class="page-2-covid-19">
   </div>
 
@@ -32,8 +29,8 @@
             <li class="artist"><p class="name">Second Mood</p><p class="hours">14:00</p></li>
           </ul>
         </div>
-        <%= link_to "Get early access", root_path, class: "call_to_action" %>
-      </div>
+        <%= link_to 'Get access', root_path, class: "btn btn-lg btn-dark btn-block active"%>
+        </div>
       <div class="right-wrapper">
         <p class="party-time">30 Days <span>:</span> 11 Hours <span>:</span> 33 Minutes</p>
         <div class="rectangle"></div>
@@ -50,9 +47,9 @@
           </div>
           <div class="right-content">
             <div class="text-content">
-              <h3>Create a room<br>with 3 <span>friends</span></h3>
-              <p>Meet random groups of friends in team.</p>
-              <%= link_to "Get early access", root_path, class: "call_to_action" %>
+              <h3>Party in a room</h3>
+              <p>Create a room with 3 other friends</p>
+              <a href="#" class="btn btn-lg btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
         </div>
@@ -61,9 +58,9 @@
         <div class="room-bottom-content">
           <div class="left-content">
             <div class="text-content">
-              <h3>Next others<br><span>random</span> rooms</h3>
+              <h3>Next random rooms</h3>
               <p>Play alcohol games and <%= link_to 'Truth or Dare', root_path%><br>against them.</p>
-              <%= link_to "Get early access", root_path, class: "call_to_action" %>
+              <a href="#" class="btn btn-lg btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
           <div class="right-content">

@@ -1,122 +1,126 @@
 <%= render "shared/navbar" %>
 <div class="product-show-container">
   <div class="product-show-content">
-    <div class="left-wrapper">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <br>
-      <%= link_to 'Back', root_path %>
-      <p>
-        <strong>Name:</strong>
-        <%= @product.name %>
-      </p>
-
-      <p>
-        <strong>Price:</strong>
-        <%= @product.price_in_cent / 100 %>€
-      </p>
-    </div>
-    <div class="right-wrapper">
-      <%= form_for [@product, @order], method: :post do |f| %>
-      <%= hidden_field_tag 'ref', params[:ref] %>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <%= f.label :email %>
-            <%= f.email_field :email, validate: true, class: "form-control", placeholder: "Email" %>
-            <% if @order.errors[:email].present?%>
-              <% msg = @order.errors[:email].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-          <div class="form-group col-md-6">
-            <%= f.label :password %>
-            <%= f.password_field :password, class: "form-control", placeholder: "Password" ,help: "Must be at least 4 characters long" %>
-            <% if @order.errors[:password].present?%>
-              <% msg = @order.errors[:password].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, class: "form-control", placeholder: "First Name", error: 'First name is mandatory, please specify one'%>
-            <% if @order.errors[:first_name].present?%>
-              <% msg = @order.errors[:first_name].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-          <div class="form-group col-md-6">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
-            <% if @order.errors[:last_name].present?%>
-              <% msg = @order.errors[:last_name].join(",") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <%= f.label :Address %>
-            <%= f.text_field :address, class: "form-control", placeholder: "Avenue Winston Churchill 432"%>
-            <% if @order.errors[:address].present?%>
-              <% msg = @order.errors[:address].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <% f.label :city %>
-            <%= f.text_field :city, class: "form-control", placeholder: "City"%>
-            <% if @order.errors[:city].present?%>
-              <% msg = @order.errors[:city].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-          <div class="form-group col-md-4">
-            <% f.label :country %>
-            <%= f.select :country, options_for_select([["France"], ["Netherlands"], ["Belgium"], ["United Kingdom"], ["Germany"]].sort), {}, {class: "form-control"} %>
-            <% if @order.errors[:country].present?%>
-              <% msg = @order.errors[:country].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-
-          <div class="form-group col-md-4">
-            <% f.label :zip_code %>
-            <%= f.text_field :zip_code, class: "form-control", placeholder: "Zip Code" %>
-            <% if @order.errors[:zip_code].present?%>
-              <% msg = @order.errors[:zip_code].join(", ") %>
-              <p class="errors"><%= msg %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <%= f.label :discount_code %>
-            <%= f.text_field :discount_code, class: "form-control", placeholder: "Enter discount code" %>
-          </div>
-          <div class="image form-group col-md-6">
-            <%= image_tag('mastercard-visa-credit-card.png', class: "credit-card") %>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <div class="form-check">
-              <input class="form-check-input-dark" type="checkbox" id="gridCheck">
-              <label class="form-check-label " for="gridCheck">
-                Accept Terms of Buying
-              </label>
+    <div class="product-show-wrapper">
+      <div class="left-wrapper">
+        <div class="left-content">
+          <div class="images-container">
+            <div class="image-rectangle">
+              <% image_tag @product.image_filename_1 %>
             </div>
           </div>
+          <br>
+          <br>
+          <%= link_to 'Back', root_path %>
+          <p>
+            <strong>Name:</strong>
+            <%= @product.name %>
+          </p>
+
+          <p>
+            <strong>Price:</strong>
+            <%= @product.price_in_cent / 100 %>€
+          </p>
         </div>
-        <button type="submit" class="btn btn-lg btn-dark btn-block">Order Your Box</button>
-      <% end %>
+      </div>
+      <div class="right-wrapper">
+        <%= form_for [@product, @order], method: :post do |f| %>
+        <%= hidden_field_tag 'ref', params[:ref] %>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :email %>
+              <%= f.email_field :email, validate: true, class: "form-control", placeholder: "Email" %>
+              <% if @order.errors[:email].present?%>
+                <% msg = @order.errors[:email].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: "form-control", placeholder: "Password" ,help: "Must be at least 4 characters long" %>
+              <% if @order.errors[:password].present?%>
+                <% msg = @order.errors[:password].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: "form-control", placeholder: "First Name", error: 'First name is mandatory, please specify one'%>
+              <% if @order.errors[:first_name].present?%>
+                <% msg = @order.errors[:first_name].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+              <% if @order.errors[:last_name].present?%>
+                <% msg = @order.errors[:last_name].join(",") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :Address %>
+              <%= f.text_field :address, class: "form-control", placeholder: "Avenue Winston Churchill 432"%>
+              <% if @order.errors[:address].present?%>
+                <% msg = @order.errors[:address].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <% f.label :city %>
+              <%= f.text_field :city, class: "form-control", placeholder: "City"%>
+              <% if @order.errors[:city].present?%>
+                <% msg = @order.errors[:city].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+            <div class="form-group col-md-4">
+              <% f.label :country %>
+              <%= f.select :country, options_for_select([["France"], ["Netherlands"], ["Belgium"], ["United Kingdom"], ["Germany"]].sort), {}, {class: "form-control"} %>
+              <% if @order.errors[:country].present?%>
+                <% msg = @order.errors[:country].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+
+            <div class="form-group col-md-4">
+              <% f.label :zip_code %>
+              <%= f.text_field :zip_code, class: "form-control", placeholder: "Zip Code" %>
+              <% if @order.errors[:zip_code].present?%>
+                <% msg = @order.errors[:zip_code].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <%= f.label :discount_code %>
+              <%= f.text_field :discount_code, class: "form-control", placeholder: "Enter discount code" %>
+            </div>
+            <div class="image form-group col-md-4">
+              <%= image_tag('mastercard-visa-credit-card.png', class: "credit-card") %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <div class="form-check">
+                <input class="form-check-input-dark" type="checkbox" id="gridCheck">
+                <label class="form-check-label " for="gridCheck">
+                  Accept Terms of Buying
+                </label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-dark btn-block">Order Your Box</button>
+        <% end %>
+      </div>
     </div>
   </div>
   <p id="copyright">© 2019-2020</p>

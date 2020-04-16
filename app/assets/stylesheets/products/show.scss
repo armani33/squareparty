@@ -12,20 +12,48 @@
   .product-show-content{
     height: 100%;
     display: flex;
-    .left-wrapper{
-      flex-basis: 50%;
-    }
-    .right-wrapper{
-      flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    .product-show-wrapper{
+      width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      .image{
+      .left-wrapper{
+        flex-basis: 60%;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        img.credit-card{
-        width: 100px;
+        padding-left: 50px;
+        .left-content{
+          margin-top: 70px;
+          width: 100%;
+          height: 530px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .images-container{
+            .image-rectangle{
+              width: 420px;
+              height: 260px;
+              margin: 0 30px;
+              background-color: white;
+              border: 1px solid #DBDBDB;
+              box-shadow: 0 0 5px rgba(0,0,0,0.16);
+            }
+          }
+        }
+      }
+      .right-wrapper{
+        flex-basis: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .image{
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          img.credit-card{
+          width: 100px;
+          }
         }
       }
     }
