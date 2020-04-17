@@ -196,11 +196,17 @@
     }
   }
   .delivery{
-    img#truck{
-      width: 70px;
-    }
-    p{
-
+    .shipping{
+      display: flex;
+      align-items: center;
+      img#truck{
+        width: 70px;
+      }
+      h4{
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 25px;
+      }
     }
   }
   img#woh{

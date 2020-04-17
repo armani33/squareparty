@@ -63,9 +63,10 @@
                 </div>
                 <div>
                   <div class="delivery">
-                    <%= image_tag('shipping-cost.png', id: "truck") %>
-
-                    <p>Price for each country:</p>
+                    <div class="shipping">
+                      <%= image_tag('shipping-cost.png', id: "truck") %>
+                      <h4>Shipping price for each country:</h4>
+                    </div>
                     <ul>
                       <% @product.delivery.each do |key, value| %>
                         <li>- <%= key.to_s + ': ' + (value/100.00).to_s %>€</li>
