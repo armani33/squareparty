@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_112356) do
+ActiveRecord::Schema.define(version: 2020_04_17_081255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 2020_04_16_112356) do
     t.string "image_filename_3"
     t.text "description"
     t.string "donation_amount"
+    t.json "delivery", default: {}
+    t.json "size", default: {}
   end
 
 end

@@ -22,7 +22,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 100px;
+        padding-left: 100px;
         .left-content{
           width: 100%;
           height: 530px;
@@ -148,8 +148,8 @@
 
 .tabbed {
   margin-top: 30px;
-  width: 90%;
-  font-family: 'Roboto'
+  width: 77%;
+  font-family: 'Roboto';
 }
 
 .tabbed > input {
@@ -160,7 +160,7 @@
   display: block;
   float: left;
   padding: 5px 0;
-  margin-right: 17px;
+  margin-right: 27px;
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -188,19 +188,36 @@
   transition: opacity .3s, transform 1s;
   z-index: 0;
   h4{
+    font-size: 30px;
+    margin-bottom: 5px;
     span{
       font-size: 18px;
       font-weight: 500;
     }
   }
-  p{
-    font-size: 14px;
+  .delivery{
+    img#truck{
+      width: 70px;
+    }
+    p{
+
+    }
   }
-  ul#size{
-    color: black;
-    padding-left: 0;
-    list-style: square;
+  img#woh{
+    width: 100px;
+  }
+  p{
+    font-size: 15px;
+  }
+  p#size{
     font-size: 16px;
+    color: black;
+    margin-bottom: 3px;
+  }
+  ul{
+    color: black;
+    padding-left: 5px;
+    column-count: 2;
     list-style: none;
     li{
       font-size: 14px;
@@ -216,3 +233,4 @@
   opacity: 1;
   z-index: 1;
 }
+

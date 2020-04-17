@@ -5,6 +5,9 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Squareparty"
 
+  config.register_stylesheet 'active_admin/json_editor.css'
+  config.register_javascript 'active_admin/json_editor.js'
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #

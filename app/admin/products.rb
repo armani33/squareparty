@@ -15,6 +15,6 @@ ActiveAdmin.register Product do
   #   permitted
   # end
 
-  permit_params :list, :of, :attributes, :on, :model, :name, :price, :image_filename_1, :image_filename_2, :image_filename_3, :string, :description, :donation_amount
-
+  permit_params :list, :of, :attributes, :on, :model, :name, :price, :image_filename_1, :image_filename_2, :image_filename_3, :string, :description, :donation_amount, :delivery, :size
+  json_editor
 end

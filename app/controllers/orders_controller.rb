@@ -58,10 +58,11 @@ class OrdersController < ApplicationController
 
     if @order.save
 
+      @total_price = @product.price_in_cent + @product.delivery[@order.country]
       Stripe.api_key = ENV["STRIPE_TEST_SECRET_KEY"]
 
       Stripe::Charge.create(
-        :amount => @product.price_in_cent,
+        :amount => @total_price,
         :currency => "eur",
         :card => @order.stripe_token # obtained with Stripe.js
       )
