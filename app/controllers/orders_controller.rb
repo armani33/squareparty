@@ -18,8 +18,10 @@ class OrdersController < ApplicationController
 
       if @order.save
 
-        if @discount_code == ""
+        if @discount_code == "" || @discount_code.nil?
           redirect_to product_payment_order_path(product_id: @product, id: @order, :ref => @referrer_code)
+        elsif Discount.find_by_discount_code(@discount_code).nil?
+          render :template => 'products/show'
         else
           if @discount_code == Discount.find_by_discount_code(@discount_code).discount_code
             @order.status = 'free'

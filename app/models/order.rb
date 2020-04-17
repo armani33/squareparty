@@ -21,7 +21,6 @@ class Order < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
 
-
   before_create :create_referral_code
   before_create :create_unique_code
   before_create :downcase_email

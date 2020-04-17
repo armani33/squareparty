@@ -22,16 +22,45 @@
               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
               <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <br>
             <!-- The dots/circles -->
-            <div style="text-align:center">
+            <div style="text-align:center; margin-top: 8px;">
               <span class="dot" onclick="currentSlide(1)"></span>
               <span class="dot" onclick="currentSlide(2)"></span>
               <span class="dot" onclick="currentSlide(3)"></span>
             </div>
           </div>
-          <br>
-          <br>
+
+
+
+          <div class="tabbed">
+              <input type="radio" name="tabs" id="tab-nav-1" checked>
+              <label for="tab-nav-1">PRODUCT</label>
+              <input type="radio" name="tabs" id="tab-nav-2">
+              <label for="tab-nav-2">DONATION</label>
+              <input type="radio" name="tabs" id="tab-nav-3">
+              <label for="tab-nav-3">ACCESS CODE</label>
+              <div class="tabs">
+                <div><h4><%= @product.price_in_cent / 100 %>€ - <span><%= @product.name %></span></h4>
+                  <p><%= @product.description %></p>
+                  <ul id='size'>Size:
+                   <!--  <li>Lens Height: 30 mm</li>
+                    <li>Lens Width: 65 mm</li> -->
+                    <li>Temple Length: 150 mm</li>
+                    <li>Frame Width: 158 mm</li>
+                  </ul>
+                </div>
+                <div>
+                  <p>Maecenas dictum, urna ut consequat condimentum, est dui commodo diam, ac pretium dui ante eu quam. Curabitur posuer risus lobortis cursus. Duis sit amet urna vel sapien ullamcorper varius.</p>
+                </div>
+                <div>
+                  <p>Duis luctus dolor ac erat luctus hendrerit. Aenean id congue magna. Proin sit amet elit vel lacus ornare dinisi, consequat id egestas vitae, porta vel sem.</p>
+                </div>
+              </div>
+            </div>
+
+
+
+<!--
           <%= link_to 'Back', root_path %>
           <p>
             <strong>Name:</strong>
@@ -41,10 +70,11 @@
           <p>
             <strong>Price:</strong>
             <%= @product.price_in_cent / 100 %>€
-          </p>
+          </p> -->
         </div>
       </div>
       <div class="right-wrapper">
+        <h2>Get your box for the party <span>🎉</span></h2>
         <%= form_for [@product, @order], method: :post do |f| %>
         <%= hidden_field_tag 'ref', params[:ref] %>
           <div class="form-row">
@@ -121,9 +151,21 @@
             </div>
           </div>
           <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :delivery %>
+              <div class="delivery-container">
+
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
             <div class="form-group col-md-8">
               <%= f.label :discount_code %>
               <%= f.text_field :discount_code, class: "form-control", placeholder: "Enter discount code" %>
+              <% if @order.errors[:discount_code].present?%>
+                <% msg = @order.errors[:discount_code].join(", ") %>
+                <p class="errors"><%= msg %></p>
+              <% end %>
             </div>
             <div class="image form-group col-md-4">
               <%= image_tag('mastercard-visa-credit-card.png', class: "credit-card") %>
