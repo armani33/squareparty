@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def main
     redirect_to dashboard_path(:h => current_user.product_id, :i => current_user.id) if logged_in?
-    @products = Product.all.sort
+    @products = Product.all.sort_by { |p| p.price_in_cent }
     @referrer_code = params[:ref]
     @user_referrer = Order.find_by_referral_code(@referrer_code) if params[:ref]
   end

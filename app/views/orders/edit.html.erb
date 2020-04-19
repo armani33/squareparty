@@ -53,7 +53,7 @@ input {
     margin-top: 2px;
     box-sizing: border-box;
     color: #000;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 500
 }
@@ -167,17 +167,17 @@ button:focus {
 
                       <div style="margin-bottom: 15px;" class="row px-5 list-price-order">
                         <small class="text-sm text-muted">Product price:</small>
-                        <h5 style="margin:0;"><span class="text-md font-weight-bold mr-2"></span><span class="text"><%= product_price = @product.price_in_cent/100.00 %> €</span></h5>
+                        <h5 style="margin:0; font-size: 17px;"><span class="text-md font-weight-bold mr-2"></span><span class="text"><%= product_price = @product.price_in_cent/100.00 %> €</span></h5>
                       </div>
 
                       <div class="row px-5 list-price-order">
                         <small style="padding-bottom: 25px;" class="text-sm text-muted">Shipping cost:</small>
-                        <h5 style="margin:0; padding-bottom: 25px; border-bottom: 1px solid #BDBDBD;"><span class="text-md font-weight-bold mr-2"></span><span class="text"><%= delivery_price = @product.delivery[@order.country]/100.00 %> €</span></h5>
+                        <h5 style="margin:0; padding-bottom: 25px; border-bottom: 1px solid #BDBDBD; font-size: 17px;"><span class="text-md font-weight-bold mr-2"></span><span class="text"><%= delivery_price = @product.delivery[@order.country]/100.00 %> €</span></h5>
                       </div>
 
                       <div style="margin-bottom: 45px;"class="row px-5 list-price-order">
                         <small class="text-sm text-muted"><b>TOTAL</b></small>
-                        <h5 style="margin:0;"><span class="text-md font-weight-bold mr-2"></span><span class="text"><%= product_price + delivery_price %> €</span></h5>
+                        <h5 style="margin:0; font-size: 17px;"><span class="text-md font-weight-bold mr-2"></span><span class="text"><%= product_price + delivery_price %> €</span></h5>
                       </div>
                       <button type="submit" class="btn btn-dark btn-block">PAY</button>
                     </div>

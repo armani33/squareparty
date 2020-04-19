@@ -8,15 +8,34 @@
         <div class="right-content">
           <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
           <h2>Party with your friends and play against others random rooms.</h2>
-          <%= link_to 'Get access', root_path, class: "btn btn-lg btn-dark btn-block active"%>
+          <%= link_to 'Get access', '#products', class: "btn btn-lg btn-dark btn-block active"%>
         </div>
       </div>
     </div>
   </div>
   <div class="page-2-covid-19">
+    <div class="page-2-content">
+      <div class="row-top">
+        <div class="image">
+          <%= image_tag('World_health_organization.png', id: "who") %>
+        </div>
+        <div class="text">
+          <h3>help us fight covid 19<br>& find a cure</h3>
+          <p>We reverse <b>5€</b> per boxes to the World Health Organization which leads<br>and coordinates the global effort, supporting countries to <b>prevent</b>, <b>detect</b>,<br>and <b>respond</b> to the pandemic. <a href="https://covid19responsefund.org/" target="_blank">Check here</a></p>
+        </div>
+      </div>
+      <div class="row-bottom">
+        <div class="partners">
+          <%= image_tag('BrusselsBeerProject-logo.png', id: "bbp") %>
+          <%= image_tag('Redd_bull_electropedia.png', id: "rbe") %>
+          <%= image_tag('BrusselsBeerProject-logo.png', id: "bbp") %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="page-3-lineup-container">
+    <%= image_tag('Disco_ball.png', id: "disco-ball") %>
     <div class="page-3-lineup-content">
       <div class="left-wrapper">
         <p class="party-time">Party starts in</p>
@@ -29,7 +48,7 @@
             <li class="artist"><p class="name">Second Mood</p><p class="hours">14:00</p></li>
           </ul>
         </div>
-        <%= link_to 'Get access', root_path, class: "btn btn-lg btn-dark btn-block active"%>
+        <%= link_to 'Get access', '#products', class: "btn btn-lg btn-dark btn-block active"%>
         </div>
       <div class="right-wrapper">
         <p class="party-time">30 Days <span>:</span> 11 Hours <span>:</span> 33 Minutes</p>
@@ -49,7 +68,7 @@
             <div class="text-content">
               <h3>Party in a room</h3>
               <p>Create a room with 3 other friends</p>
-              <a href="#" class="btn btn-lg btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="#products" class="btn btn-lg btn-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
         </div>
@@ -60,7 +79,7 @@
             <div class="text-content">
               <h3>Next random rooms</h3>
               <p>Play alcohol games and <%= link_to 'Truth or Dare', root_path%><br>against them.</p>
-              <a href="#" class="btn btn-lg btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+              <a href="#products" class="btn btn-lg btn-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get access&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
           <div class="right-content">
@@ -75,30 +94,34 @@
     <div class="truth-or-dare-content"></div>
   </div>
 
-  <div class="box-container">
+  <div id= "products" class="box-container">
     <div class="box-content">
       <h3>Choose your box for the party 🎉</h3>
-      <p>We will deliver them at your doorstep before the party start.</p>
+      <p>Each box, embedding a Covid-19 donation, grants you access to the party.</p>
       <div class="box-wrapper">
-        <% @products.each do |product| %>
-          <%= link_to product_path(product, :ref => @referrer_code ) do %>
-            <div class="box">
-              <div class="box-top">
-                <div class="image"><%= image_tag product.image_filename_1 %></div>
-                <div class="text-content">
-                  <ul>
-                    <li><%= image_tag 'check-ok.png' %>Free entrance ticket.</li>
-                    <li><%= image_tag 'check-ok.png' %><%= product.donation_amount %>€ donation to Covid-19.</li>
-                    <li><%= image_tag 'check-ok.png' %><%= product.name %>.</li>
-                  </ul>
+        <div class="row justify-content-center">
+          <% @products.each do |product| %>
+            <%= link_to product_path(product, :ref => @referrer_code ) do %>
+            <div class="col-sm-4">
+              <div class="box">
+                <div class="box-top">
+                  <div class="image"><%= image_tag product.image_filename_main %></div>
+                  <div class="text-content">
+                    <ul>
+                      <li><%= image_tag 'check-ok.png' %>Entrance ticket.</li>
+                      <li><%= image_tag 'check-ok.png' %><%= product.donation_amount %>€ donation to Covid-19.</li>
+                      <li><%= image_tag 'check-ok.png' %><%= product.name %>.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="box-bottom">
+                  <p><%= product.price_in_cent / 100%>€</p>
                 </div>
               </div>
-              <div class="box-bottom">
-                <p><%= product.price_in_cent / 100%>€</p>
-              </div>
             </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

@@ -16,7 +16,11 @@
               </div>
 
               <div class="productImage">
-                <div class="image-wrap"><%= image_tag @product.image_filename_1 %></div>
+                <div class="image-wrap"><%= image_tag @product.image_filename_3 %></div>
+              </div>
+
+              <div class="productImage">
+                <div class="image-wrap"><%= image_tag @product.image_filename_4 %></div>
               </div>
 
               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -27,6 +31,7 @@
               <span class="dot" onclick="currentSlide(1)"></span>
               <span class="dot" onclick="currentSlide(2)"></span>
               <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
             </div>
           </div>
 
@@ -45,16 +50,9 @@
                 <div>
                   <h4><%= @product.price_in_cent / 100 %>€ - <span><%= @product.name %></span></h4>
                   <p><%= @product.description %></p>
-                  <% unless @product.size.nil?  %>
-                    <ul>
-                      <% @product.size.each do |key, value| %>
-                        <li>- <%= key.to_s + ': ' + value %></li>
-                      <% end %>
-                    </ul>
-                  <% end %>
                 </div>
                 <div>
-                  <%= image_tag('world_health_organization.png', id: "woh") %>
+                  <%= image_tag('World_health_organization.png', id: "woh") %>
                   <p>We reverse <b><%= @product.donation_amount %>€</b> to the World Health Organization which leads and coordinates the global effort, supporting countries to <b>prevent</b>, <b>detect</b>, and <b>respond</b> to the pandemic.
                     <a href="https://covid19responsefund.org/" target="_blank">Check here</a> for more infos</p>
                 </div>
@@ -69,7 +67,11 @@
                     </div>
                     <ul>
                       <% @product.delivery.each do |key, value| %>
-                        <li>- <%= key.to_s + ': ' + (value/100.00).to_s %>€</li>
+                        <% if value.is_a? Integer %>
+                          <li>- <%= key.to_s + ': ' + (value/100.00).to_s %>€</li>
+                        <% else %>
+                          <li>- <%= key.to_s + ': ' + value.to_s %></li>
+                        <% end %>
                       <% end %>
                     </ul>
                   </div>
