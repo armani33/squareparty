@@ -62,7 +62,7 @@
     referrals_count = @order.referrals.count
     no_referral_cards = 10 - referrals_count
   end
-
+i = 1
 
 %>
 
@@ -72,21 +72,24 @@
       <% if referrals_count == 0 %>
         <p id="total">TOTAL EARNED = 0€ </p>
       <% else %>
-        <p id="total">TOTAL EARNED = referrals_count€</p>
+        <p id="total">TOTAL EARNED = <%= referrals_count %>€ 🤑</p>
       <% end %>
       <div class="friends-cards-container">
         <% @order.referrals.each do |referral| %>
           <div class="friends-cards referal_cards">
-            <p class="first-name">referral.first_name</p>
-            <p class="last-name">referral.last_name</p>
+            <p class="first-name"><%= referral.first_name %></p>
+            <p class="last-name"><%= referral.last_name %></p>
             <p class="last-name">🎉</p>
             <p class="money">You won 1 €</p>
           </div>
+          <% i += 1 %>
         <% end %>
         <% no_referral_cards.times do |card| %>
           <div class="friends-cards">
             <p>1€</p>
+            <p id=number><%= i %></p>
           </div>
+          <% i += 1 %>
         <% end %>
       </div>
 <%
@@ -102,7 +105,7 @@
       <% else %>
         <p class="place"><span id="friend"><%= referrals_count %></span> <%= words %> joined</p>
       <% end %>
-      <p class="check">Keep checking</p>
+      <p class="check">Keep checking...</p>
     </div>
   </div>
 </div>

@@ -219,6 +219,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          position: relative;
           p{
             font-size: 22px;
             font-family: 'Cunia';
@@ -231,6 +232,16 @@
             font-size: 14px;
             margin: 0;
           }
+          p#number{
+            position: absolute;
+            color: white;
+            font-family: 'Roboto';
+            font-size: 14px;
+            bottom: 0px;
+            left: 45%;
+            right: 55%;
+            padding: 0;
+          }
         }
         .referal_cards{
           background-color: white;
@@ -242,7 +253,7 @@
           align-items: center;
           p{
             font-family: 'Cunia';
-            font-size: 17px;
+            font-size: 12px;
             font-weight: 500;
             color: #00D8E9;
           }
