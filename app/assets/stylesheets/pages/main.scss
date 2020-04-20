@@ -48,7 +48,7 @@
   .page-2-covid-19{
     height: 100vh;
     .page-2-content{
-      padding: 60px 110px;
+      padding: 60px 140px;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -59,7 +59,7 @@
         .image{
           flex-basis: 30%;
           img#who{
-            width: 200px;
+            width: 165px;
           }
         }
         .text{
@@ -91,10 +91,10 @@
           display: flex;
           justify-content: space-between;
           img#bbp{
-            width: 200px;
+            width: 150px;
           }
           img#rbe{
-            width: 200px;
+            width: 150px;
           }
         }
       }
@@ -190,6 +190,9 @@
           background-color: white;
           border: 1px solid #DBDBDB;
           box-shadow: 0 0 5px rgba(0,0,0,0.16);
+          img#event_cover{
+            width: 100%;
+          }
         }
       }
     }
@@ -314,12 +317,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 100px;
         a{
           &:hover{
             background-color: transparent;
             text-decoration: none;
             .box{
-              border-color: #2F7EF7;
+              border-color: #353A40;
               border-radius: 5px;
             }
           }
@@ -380,7 +384,7 @@
           .box-bottom{
             flex-basis: 19%;
             display: flex;
-            background-color: #2F7EF7;
+            background-color: #353A40;
             justify-content: center;
             align-items: center;
             border-radius: 0 0 5px 5px;

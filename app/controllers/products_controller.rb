@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @order = Order.new
+      redirect_to root_path if logged_in?
+      @order = Order.new
   end
 
   # GET /products/new

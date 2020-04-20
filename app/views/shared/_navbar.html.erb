@@ -9,6 +9,15 @@
     <div class="login-container">
       <%= link_to login_path do%><div class="login-button">Login</div><% end %>
     </div>
+  <% else (params[:action] == "dashboard" && params[:controller] == "pages") %>
+    <div class="dropdown">
+      <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to "Log Out", logout_path %>
+      </div>
+    </div>
   <% end %>
 </div>
 <div class="flash-alert">
