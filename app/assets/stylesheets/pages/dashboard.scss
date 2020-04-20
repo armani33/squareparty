@@ -1,0 +1,35 @@
+.dashboard-container{
+  .dasboard-content{
+    display: flex;
+    .dashboard-top{
+      flex-basis: 70%;
+      display: flex;
+      .tankyou{
+        flex-basis: 50%;
+        width: 515px;
+        position: relative;
+        h2{
+          font-family: 'Cunia';
+          font-size: 90px;
+        }
+        img{
+          position: absolute;
+          right: 0px;
+          top: 80px;
+          width: 50px;
+        }
+      }
+      .refer-friends-container{
+        .refer-friends-content{
+          .text-part{
+            h1{}
+            h2{}
+          }
+        }
+      }
+    }
+    .dashboard-bottom{
+      flex-basis: 30%;
+    }
+  }
+}

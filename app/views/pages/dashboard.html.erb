@@ -2,10 +2,39 @@
 
 <div class="dashboard-container">
   <div class="dasboard-content">
-    <div class="dashboard-top"></div>
-    <div class="dashboard-bottom"></div>
+    <div class="dashboard-top">
+      <div class="tankyou">
+        <h2>Thank You</h2>
+        <%= image_tag('Disco_ball.png', id: "disco-ball") %>
+        <p>Access the Party With your<br>Unique code: <span>ZFX3YA9E</span></p>
+      </div>
+
+      <div class="refer-friends-container">
+        <div class="refer-friends-content">
+          <div class="text-part">
+            <h2>DON'T LEAVE YOUR FRIENDS BEHIND</h2>
+            <h1><span>INVITE</span> FRIENDS &<br>EARN PRODUCT</h1>
+            <div class="copy-link"><%= root_url %>?ref=<%= @order.referral_code %></div>
+            <% twitter_message = "#Mobility is evolving. Excited for YodaCity to launch." %>
+            <div class="social-links">
+              <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@order.referral_code) %>&title=YodaCity" class="fb" target="_blank"><i class="fab fa-facebook" style="color: #001C7A;"></i></a>
+              <div class="sep"></div>
+              <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@order.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"><i class="fab fa-twitter-square" style="color: #001C7A;"></i></a>
+            </div>
+            <p style="margin-top: 0px; color: #001C7A;">Your unique link works with those two buttons too :-)</p>
+            <p>You can also share your unique link via Email, Messenger<br>or Instagram to earn SquareParty rewards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-bottom">
+
+    </div>
   </div>
 </div>
+
+
+<!--
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.email %></h1>
 <%end%>
@@ -27,10 +56,4 @@
 </article>
 
 
-
-<% if current_user %>
-  <%= link_to "Log Out", logout_path %>
-<% end %>
-
-
-
+ -->
