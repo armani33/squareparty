@@ -58,9 +58,15 @@
     }
   }
   .dropdown{
-    margin-right: 80px;
+    margin-right: 70px;
     margin-top: 0px;
+    .dropdown-menu{
+      left: -2px !important;
+      min-width: 4rem !important;
+      color: black !important;
+    }
   }
+
 }
 .flash-alert{
   position: fixed;
