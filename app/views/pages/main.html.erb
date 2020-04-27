@@ -101,10 +101,10 @@
       <h3>Choose your box for the party 🎉</h3>
       <p>Each box, embedding a Covid-19 donation, grants you access to the party.</p>
       <div class="box-wrapper">
-        <div class="row justify-content-center mt-1">
+        <div class="row justify-content-center ">
           <% @products.each do |product| %>
             <%= link_to product_path(product, :ref => @referrer_code ) do %>
-            <div class="col-sm-4">
+            <div class="col-sm-4 bottom-margin">
               <div class="box">
                 <div class="box-top">
                   <div class="image"><%= image_tag product.image_filename_main %></div>

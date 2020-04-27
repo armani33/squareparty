@@ -62,7 +62,6 @@
     referrals_count = @order.referrals.count
     no_referral_cards = 10 - referrals_count
   end
-i = 1
 
 %>
 
@@ -82,14 +81,11 @@ i = 1
             <p class="last-name">🎉</p>
             <p class="money">You won 1 €</p>
           </div>
-          <% i += 1 %>
         <% end %>
         <% no_referral_cards.times do |card| %>
           <div class="friends-cards">
             <p>1€</p>
-            <p id=number><%= i %></p>
           </div>
-          <% i += 1 %>
         <% end %>
       </div>
 <%
