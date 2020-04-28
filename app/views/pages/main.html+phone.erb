@@ -1,0 +1,171 @@
+<div class="nav-mobile">
+  <%= link_to root_path, id: "logo" do %>
+    <%= image_tag('Logo-thug@2x.png', id: "logo") %>
+    <p>Square</p>
+  <% end %>
+  <%= image_tag('guirlande_bleu@2xx.png', id: "mobile-guirlande") %>
+  <%= link_to login_path, id: "login" do%><div class="login-button">Login</div><% end %>
+</div>
+
+<div class="main-container-mobile">
+  <div class="page-1-main-mobile">
+    <div class="text">
+      <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
+      <h2>Party with your friends and play against<br>others random rooms.</h2>
+      <%= link_to 'Get access', '#products', class: "btn btn-lg btn-dark btn-block active"%>
+    </div>
+  </div>
+
+  <div class="page-2-covid-19-mobile">
+    <div class="page-2-covid-19-content">
+      <div class="woh">
+        <%= image_tag('who.png', id: "who") %>
+        <h3>help us<br>fight<br>covid 19</h3>
+      </div>
+      <p>We reverse between <b>2€</b> & <b>5€</b> per boxes to the World Health Organization which leads and coordinates the global effort, supporting countries to <b>prevent</b>, <b>detect</b> and <b>respond</b> to the pandemic. <a href="https://covid19responsefund.org/" target="_blank">Check here</a></p>
+      <div class="partners-logo">
+        <%= image_tag('BrusselsBeerProject-logo.png', id: "bbp") %>
+        <%= image_tag('Redd_bull_electropedia.png', id: "rbe") %>
+        <%= image_tag('BrusselsBeerProject-logo.png', id: "bbp") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-3-lineup-container-mobile">
+    <div class="page-3-lineup-content">
+      <p class="party-time">Party starts in<br><span id="days"></span> <span id="days-text"></span> <span id="semicolumn">:</span> <span id="hours"></span> <span id="hours-text"></span> <span id="semicolumn">:</span> <span id="minutes"></span> <span id="minutes-text"></span></p>
+      <div class="lineup">
+        <h3>line up</h3>
+        <ul class="artists">
+          <li class="artist"><p class="name">Patrick Toping</p><p class="hours">17:00</p></li>
+          <li class="artist"><p class="name">Lola Arrow</p><p class="hours">16:00</p></li>
+          <li class="artist"><p class="name">Dc Salas</p><p class="hours">15:00</p></li>
+          <li class="artist"><p class="name">Second Mood</p><p class="hours">14:00</p></li>
+        </ul>
+      </div>
+      <%= image_tag('Mobile/event-cover-mobile.png', id: "event-cover-mobile") %>
+      <%= link_to 'Get access', '#products', class: "btn btn-lg btn-dark btn-block active"%>
+    </div>
+  </div>
+
+  <div class="rooms-container-mobile">
+    <div class="rooms-content-mobile">
+      <div class="room-friends">
+        <h3>Create a Room<br>with 3 <span>friends</span></h3>
+        <p>Create a room with 3 other friends</p>
+        <div class="rectangle blue-border"></div>
+      </div>
+      <div class="room-next">
+        <h3><span>Next</span> others<br>random rooms</h3>
+        <p>Play alcohol games and chat with random people.</p>
+        <div class="rectangle orange-border"></div>
+        <a href="#products" class="btn btn-lg btn-block btn-dark">Get access</a>
+      </div>
+    </div>
+
+  <div id= "products" class="box-container-mobile">
+    <div class="box-content-mobile">
+      <h3>Choose your box for the party 🎉</h3>
+      <p>Each box embends your Covid-19 donation & grants you access to the party.</p>
+      <div class="box-wrapper">
+        <div class="row justify-content-center ">
+          <% @products.each do |product| %>
+            <%= link_to product_path(product, :ref => @referrer_code ) do %>
+            <div class="col-sm-4 bottom-margin">
+              <div class="box">
+                <div class="box-top">
+                  <div class="image"><%= image_tag product.image_filename_main %></div>
+                  <div class="text-content">
+                    <ul>
+                      <li><%= image_tag 'check-ok.png' %>Entrance ticket.</li>
+                      <li><%= image_tag 'check-ok.png' %><%= product.donation_amount %>€ donation to Covid-19.</li>
+                      <% unless product.name == "" %>
+                        <li><%= image_tag 'check-ok.png' %><%= product.name %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+                <div class="box-bottom">
+                  <p><%= product.price_in_cent / 100%>€</p>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("May 15, 2020 14:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  if (days <= 1){
+    document.getElementById("days-text").innerHTML = "DAY"
+  }else{
+    document.getElementById("days-text").innerHTML = "DAYS"
+  }
+
+  if (hours <= 1){
+    document.getElementById("hours-text").innerHTML = "HOUR"
+  }else{
+    document.getElementById("hours-text").innerHTML = "HOURS"
+  }
+
+  if (minutes <= 1){
+    document.getElementById("minutes-text").innerHTML = "MINUTE"
+  }else{
+    document.getElementById("minutes-text").innerHTML = "MINUTES"
+  }
+
+  // Display the result in the element with id="demo"
+  document.getElementById("days").innerHTML = days
+  document.getElementById("hours").innerHTML = hours
+  document.getElementById("minutes").innerHTML = minutes
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("party-time").innerHTML = "JOIN THE PARTY";
+  }
+}, 1000);
+</script>

@@ -9,6 +9,7 @@
     <div class="login-container">
       <%= link_to login_path do%><div class="login-button">Login</div><% end %>
     </div>
+  <% elsif (params[:action] == "show" && params[:controller] == "products") %>
   <% else (params[:action] == "dashboard" && params[:controller] == "pages") %>
     <div class="dropdown">
       <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
