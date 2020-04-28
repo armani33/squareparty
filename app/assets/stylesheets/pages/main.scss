@@ -99,7 +99,7 @@
             width: 120px;
           }
           img#rbe{
-            width: 150px;
+            width: 170px;
             height: 120px;
           }
         }
@@ -182,13 +182,15 @@
         }
       }
       .right-wrapper{
-        p.party-time{
+        p#party-time{
           font-family: Cunia;
           font-size: 18px;
           margin-bottom: 50px;
-          color: #2F7EF7;
           span{
             color: black;
+          }
+          span#days, span#days-text, span#hours, span#hours-text, span#minutes, span#minutes-text{
+            color: #2F7EF7;
           }
         }
         .rectangle{
