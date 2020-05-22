@@ -141,27 +141,37 @@
       }
     }
     .login-container{
-      margin-right: 90px;
+      margin-right: 60px;
       margin-top: -20px;
+      display: flex;
       a{
-      text-decoration: none;
-      color: black;
-      z-index: 1;
-      .login-button{
-        width: 110px;
-        height: 30px;
-        text-align: center;
-        line-height: 28px;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 1px;
-        box-shadow: 3px 2px 2px rgba(0,0,0,0.25);
-        font-weight: 500;
-        font-size: 16px;
-        font-family: 'Roboto';
+        text-decoration: none;
+        color: black;
+        z-index: 1;
+        margin: 0 20px;
+        .login-button{
+          font-weight: 500;
+          font-size: 16px;
+          font-family: 'Roboto';
+          margin-top: 3px;
           &:hover{
             border-radius: 25px;
             transition: all 0.3s ease 0s;
+          }
+        }
+        #help-dropdown{
+          margin: 0 !important;
+        }
+        .ticket-button{
+          font-weight: 500;
+          font-size: 16px;
+          font-family: 'Roboto';
+          padding: 4px 44px;
+          background-color: #2A5FF6;
+          border-radius: 25px;
+          color: white;
+          &:hover{
+            background-color: #1142CC;
           }
         }
       }
