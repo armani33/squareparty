@@ -1,100 +1,29 @@
 <%= render "shared/navbar" %>
 <div class="main-container">
-  <%= image_tag('guirlande_bleu@2xx.png', id: "guirlande") %>
 
   <div class="page-1-container">
     <div class="page-1-wrapper">
-      <div class="right-wrapper">
-        <div class="right-content">
-          <h1>A virtual party<br>To fight Covid-19<br>With your team.</h1>
-          <h2>Party with your friends and play against<br>others random rooms.</h2>
-          <%= link_to 'Get access', '#products', class: "btn btn-lg btn-dark btn-block active"%>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="page-2-covid-19">
-    <div class="page-2-content">
-      <div class="row-top">
-        <div class="image">
-          <%= image_tag('who.png', id: "who") %>
-        </div>
-        <div class="text">
-          <h3>help us fight covid 19<br>& find a cure</h3>
-          <p>We reverse between <b>2€</b> & <b>5€</b> per boxes to the World Health Organization which<br>leads and coordinates the global effort, supporting countries to <b>prevent</b>, <b>detect</b>,<br>and <b>respond</b> to the pandemic. <a href="https://covid19responsefund.org/" target="_blank">Check here</a></p>
-        </div>
-      </div>
-      <div class="row-bottom">
-        <div class="partners">
-          <%= image_tag('BrusselsBeerProject-logo.png', id: "bbp") %>
-          <%= image_tag('Redd_bull_electropedia.png', id: "rbe") %>
-          <%= image_tag('BrusselsBeerProject-logo.png', id: "bbp") %>
-        </div>
+      <h1>Connect around live music</h1>
+      <h2>Meet people while discovering artists</h2>
+      <div class="party-time">
+        <p class="party">Next event starts in</p>
+        <p class="time"><span id="days"></span> <span id="days-text"></span> <span id="semicolumn">:</span> <span id="hours"></span> <span id="hours-text"></span> <span id="semicolumn">:</span> <span id="minutes"></span> <span id="minutes-text"></span></p>
       </div>
     </div>
   </div>
 
-  <div class="page-3-lineup-container">
-    <%= image_tag('Disco_ball.png', id: "disco-ball") %>
-    <div class="page-3-lineup-content">
-      <div class="left-wrapper">
-        <p class="party-time">Party starts in</p>
-        <div class="rectangle">
-          <h3>line up</h3>
-          <ul class="artists">
-            <li class="artist"><p class="name">Patrick Toping</p><p class="hours">17:00</p></li>
-            <li class="artist"><p class="name">Lola Arrow</p><p class="hours">16:00</p></li>
-            <li class="artist"><p class="name">Dc Salas</p><p class="hours">15:00</p></li>
-            <li class="artist"><p class="name">Second Mood</p><p class="hours">14:00</p></li>
-          </ul>
-        </div>
-        <%= link_to 'Get access', '#products', class: "btn btn-lg btn-dark btn-block active"%>
-        </div>
-      <div class="right-wrapper">
-        <p id="party-time"><span id="days"></span> <span id="days-text"></span> <span id="semicolumn">:</span> <span id="hours"></span> <span id="hours-text"></span> <span id="semicolumn">:</span> <span id="minutes"></span> <span id="minutes-text"></span></p>
-        <div class="rectangle">
-          <%= image_tag('event-cover.png', id: "event_cover") %>
-        </div>
-      </div>
+  <div class="page-2-container">
+    <div class="page-2-wrapper">
+      <h2>Line-Up:</h2>
+      <%= link_to '#products' do%><div class="ticket-button">Get access</div><% end %>
     </div>
   </div>
 
-  <div class="rooms-container">
-    <div class="rooms-content">
-      <div class="room-top-wrapper">
-        <div class="room-top-content">
-          <div class="left-content">
-            <div class="rectangle"></div>
-          </div>
-          <div class="right-content">
-            <div class="text-content">
-              <h3>Party in a room</h3>
-              <p>Create a room with 3 other friends</p>
-              <a href="#products" class="btn btn-lg btn-dark">Get access</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="room-bottom-wrapper">
-        <div class="room-bottom-content">
-          <div class="left-content">
-            <div class="text-content">
-              <h3>Next random rooms</h3>
-              <p>Play alcohol games and <%= link_to 'Truth or Dare', root_path%><br>against them.</p>
-              <a href="#products" class="btn btn-lg btn-dark">Get access</a>
-            </div>
-          </div>
-          <div class="right-content">
-            <div class="rectangle"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="truth-or-dare-container">
-    <div class="truth-or-dare-content"></div>
-  </div>
+
+
+
+
 
   <div id= "products" class="box-container">
     <div class="box-content">
@@ -136,7 +65,7 @@
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("May 15, 2020 14:00:00").getTime();
+var countDownDate = new Date("May 31, 2020 20:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

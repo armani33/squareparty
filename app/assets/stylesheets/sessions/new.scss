@@ -4,6 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  a#back-btn{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    text-decoration: none;
+    padding: 3px 10px;
+    background-color: #24272C;
+    border-radius: 3px;
+    color: white;
+  }
   h1{
     font-family: 'Cunia';
     font-size: 40px;
